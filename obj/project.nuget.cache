@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rYtSgR1L2lw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\S45ASP\\Projects\\TaskApiV2\\TaskApiV2\\TaskApiV2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\S45ASP\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
+    "C:\\Users\\S45ASP\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

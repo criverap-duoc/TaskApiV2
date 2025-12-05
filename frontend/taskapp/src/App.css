@@ -1,0 +1,204 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes taskAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.70);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.task-item {
+  animation: taskAppear 0.5s ease-out;
+}
+
+
+/* === LAYOUT GENERAL === */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f4f6;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* === TITULO === */
+h1 {
+  text-align: center;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* === FORMULARIO === */
+.form-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.form-container button {
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-container button:hover {
+  background: #1e40af;
+}
+
+/* === LISTA DE TAREAS === */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* === TAREA INDIVIDUAL === */
+.task-item {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.task-item span {
+  font-size: 16px;
+  color: #1f2937;
+}
+
+/* === BOTONES DE LA TAREA === */
+.task-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-edit { background: #10b981; }    /* verde */
+.btn-edit:hover { background: #059669; }
+
+.btn-delete { background: #ef4444; }  /* rojo */
+.btn-delete:hover { background: #b91c1c; }
+
+.btn-save { background: #3b82f6; }    /* azul */
+.btn-save:hover { background: #1d4ed8; }
+
+.btn-cancel { background: #6b7280; }  /* gris */
+.btn-cancel:hover { background: #4b5563; }
+
+/* === INPUT EDIT === */
+.edit-input {
+  padding: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* Priority badges */
+.priority-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: white;
+}
+.priority-badge.low { background: #10b981; }
+.priority-badge.medium { background: #f59e0b; }
+.priority-badge.high { background: #ef4444; }
+
+/* tag style */
+.tag { background: #eef2ff; padding: 4px 8px; border-radius: 999px; margin-left: 6px; font-size: 12px; color: #334155; }
+body.dark .tag { background: #2a2a3a; color: #d1d5db; }
+
+/* overdue / due-soon */
+.overdue { color: #ff4d4d; font-weight: 700; }
+.due-soon { color: #f59e0b; font-weight: 700; }
+
+/* form expand animation */
+.form-container.expanded .advanced-fields {
+  animation: expandFade 220ms ease-out;
+}
+@keyframes expandFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* toolbar */
+.tasklist-toolbar input, .tasklist-toolbar select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}

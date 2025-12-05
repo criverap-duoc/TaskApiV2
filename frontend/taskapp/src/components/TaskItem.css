@@ -1,0 +1,88 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  transition: background 0.2s, transform 0.1s;
+  animation: taskAppear 0.7s ease-out;
+  animation-fill-mode: both;
+}
+
+.task-list .task-item:nth-child(1) { animation-delay: 0s; }
+.task-list .task-item:nth-child(2) { animation-delay: 0.04s; }
+.task-list .task-item:nth-child(3) { animation-delay: 0.08s; }
+
+@keyframes taskAppear {
+  from { opacity: 0; transform: translateY(6px) scale(0.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.task-item:hover {
+  transform: scale(1.01);
+  background: #f0f0f0;
+}
+
+/* Título + descripción */
+.task-content {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.task-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.task-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Botones */
+.task-buttons button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.task-buttons .delete {
+  background: #ff4d4d;
+  color: white;
+}
+
+.task-buttons .delete:hover {
+  background: #d93636;
+}
+
+.task-buttons .edit {
+  background: #4da6ff;
+  color: white;
+}
+
+.task-buttons .edit:hover {
+  background: #1a8dff;
+}
+
+
+@keyframes taskRemove {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.task-item.removing {
+  animation: taskRemove 0.7s ease-in forwards;
+  pointer-events: none; 
+}
